@@ -7,30 +7,45 @@
 
     <script type="text/javascript">
         Rally.onReady(function () {
-                Ext.define('CustomApp', {
-    extend: 'Rally.app.App',
-    componentCls: 'app',
-    items:{ html:'<a href="https://help.rallydev.com/apps/2.0rc2/doc/">App SDK 2.0rc2 Docs</a>'},
-    launch: function showPie() {
-        
-        var rallyDataSource=new rally.sdk.data.RallyDataSource('__WORKSPACE_OID__',
-        '__PROJECT_OID__',
-        '__PROJECT_SCOPING_UP__',
-        '__PROJECT_SCOPING_DOWN__');
-        var pieConfig ={
-            type: "Defect",
-            attribute: "Priority",
-            title: "Defects by Priority",
-            height: 200,
-            width: 200
-        };
-        var pieChart = new rally.sdk.ui.PieChart(pieConfig, rallyDataSource);
-        pieChart.display("pieChartDiv");
-    }
-})
-    rally.addOnLoad(showPie);
+                // Create a draw component
+var drawComponent = Ext.create('Ext.draw.Component', {
+    viewBox: false
+});
 
-     
+// Create a window to place the draw component in
+Ext.create('Ext.Window', {
+    width: 220,
+    height: 230,
+    layout: 'fit',
+    items: [drawComponent]
+}).show();
+
+// Add a circle sprite
+var myCircle = drawComponent.surface.add({
+    type: 'circle',
+    x: 100,
+    y: 100,
+    radius: 100,
+    fill: '#cc5'
+});
+
+// Now do stuff with the sprite, like changing its properties:
+myCircle.setAttributes({
+    fill: '#ccc'
+}, true);
+
+// or animate an attribute on the sprite
+myCircle.animate({
+    to: {
+        fill: '#555'
+    },
+    duration: 2000
+});
+
+// Add a mouseup listener to the sprite
+myCircle.addListener('mouseup', function() {
+    alert('mouse upped!');
+});
 
             Rally.launchApp('CustomApp', {
                 name:"piechart",
