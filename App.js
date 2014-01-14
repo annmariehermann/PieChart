@@ -5,16 +5,244 @@ var drawComponent = Ext.create('Ext.draw.Component', {
 
 // Create a window to place the draw component in
 Ext.create('Ext.Window', {
-    width: 500,
-    height: 250,
+    width: 600,
+    height: 400,
     layout: 'fit',
     items: [drawComponent]
 }).show();
 
-// Add a circle sprite
+var back = drawComponent.surface.add({
+    type: 'rect',
+    stroke: '#0BB4BF',
+    x: 0,
+    y: 0,
+    'stroke-width': 3,
+    width: 600,
+    height: 400
+});
+var back1 = drawComponent.surface.add({
+    type: 'rect',
+    stroke: '#0BB4BF',
+    x: 0,
+    y: 150,
+    'stroke-width': 3,
+    width: 600,
+    height: 250
+});
+var spoke1 = drawComponent.surface.add({
+type : "path",
+            path : "M 35 -20 L 90 0 L 30 29",
+            fill : '#FF02D9',
+            'fill-rule' : 'nonzero',
+            group : 'convc',
+            stroke : 'none'
+});
+var spoke2 = drawComponent.surface.add({
+type : "path",
+            path : "M 35 0 L 90 36 L 25 49",
+            fill : '#FF02D9',
+            'fill-rule' : 'nonzero',
+            group : 'convc',
+            stroke : 'none'
+});
+
+var spoke3= drawComponent.surface.add({
+type : "path",
+            path : "M 35 0 L 70 85 L 0 64",
+            fill : '#FF02D9',
+            'fill-rule' : 'nonzero',
+            group : 'convc',
+            stroke : 'none'
+});
+var spoke4 = drawComponent.surface.add({
+type : "path",
+            path : "M -8 30 L 35 28 L 20 100",
+            fill : '#FF02D9',
+            group : 'convc',
+            stroke : 'none'
+});
+
+var sun3 = drawComponent.surface.add({
+    type: 'circle',
+    x: 0,
+    y: 0,
+    radius: 57,
+});
+var sun2 = drawComponent.surface.add({
+    type: 'circle',
+    x: 0,
+    y: 0,
+    radius: 53,
+});
+var sun1 = drawComponent.surface.add({
+    type: 'circle',
+    x: 0,
+    y: 0,
+    radius: 49,
+});
+var sun = drawComponent.surface.add({
+    type: 'circle',
+    x: 0,
+    y: 0,
+    radius: 45,
+});
+
+var tail = drawComponent.surface.add({
+type : "path",
+            path : "M 250 122 L 310 102 L 280 142",
+            fill : '#FF02D9',
+            group : 'convc',
+            stroke : 'none'
+});
+var earl = drawComponent.surface.add({
+    type: 'ellipse',
+    radiusX: 25,
+    radiusY:50,
+    x: 105,
+    y: 160,
+    radius: 20,
+    fill: '#lll'
+});
+var body1 = drawComponent.surface.add({
+    type: 'ellipse',
+    radiusX: 71,
+    radiusY:51,
+    x: 220,
+    y: 155,
+    radius: 22,
+    fill: '#eee'
+});
+var body = drawComponent.surface.add({
+    type: 'ellipse',
+    radiusX: 70,
+    radiusY:50,
+    x: 220,
+    y: 155,
+    radius: 20,
+    fill: '#eee'
+});
+
+var earr = drawComponent.surface.add({
+    type: 'ellipse',
+    radiusX: 25,
+    radiusY:50,
+    x: 177,
+    y: 156,
+    radius: 20,
+    fill: '#lll'
+});
+var head = drawComponent.surface.add({
+    type: 'ellipse',
+    radiusX: 40,
+    radiusY:50,
+    x: 140,
+    y: 158,
+    radius: 20,
+    fill: '#eee'
+});
+var head1 = drawComponent.surface.add({
+    type: 'ellipse',
+    radiusX: 40,
+    radiusY:40,
+    x: 139,
+    y: 175,
+    radius: 20,
+    fill: '#eee'
+});
+var eyel = drawComponent.surface.add({
+    type: 'ellipse',
+    radiusX: 17,
+    radiusY:30,
+    x: 121,
+    y: 168,
+    radius: 20,
+    fill: '#eee'
+});
+var eyell = drawComponent.surface.add({
+    type: 'ellipse',
+    radiusX: 10,
+    radiusY:23,
+    x: 122,
+    y: 168,
+    radius: 20,
+    fill: '#eee'
+});
+var eyellll = drawComponent.surface.add({
+    type: 'ellipse',
+    radiusX: 5,
+    radiusY:8,
+    x: 122,
+    y: 168,
+    radius: 20,
+    fill: '#eee'
+});
+var eyer = drawComponent.surface.add({
+    type: 'ellipse',
+    radiusX: 17,
+    radiusY:30,
+    x: 154,
+    y: 168,
+    radius: 20,
+    fill: '#eee'
+});
+var eyerr = drawComponent.surface.add({
+    type: 'ellipse',
+    radiusX: 10,
+    radiusY:23,
+    x: 154,
+    y: 168,
+    radius: 20,
+});
+var eyerrrr = drawComponent.surface.add({
+    type: 'ellipse',
+    radiusX: 5,
+    radiusY:8,
+    x: 154,
+    y: 168,
+    radius: 20,
+});
+var ton = drawComponent.surface.add({
+    type: 'ellipse',
+    radiusX: 3,
+    radiusY:6,
+    x: 137,
+    y: 210,
+    radius: 20,
+    fill: '#lll'
+});
+var Cir = drawComponent.surface.add({
+    type: 'circle',
+    x: 81,
+    y: 200,
+    radius: 22,
+    fill: '#eee'
+});
+
+var Cir3 = drawComponent.surface.add({
+    type: 'circle',
+    x: 193,
+    y: 200,
+    radius: 22,
+    fill: '#eee'
+});
+var Cir4 = drawComponent.surface.add({
+    type: 'circle',
+    x: 233,
+    y: 200,
+    radius: 22,
+    fill: '#eee'
+});
+var Cir5 = drawComponent.surface.add({
+    type: 'circle',
+    x: 272,
+    y: 200,
+    radius: 22,
+    fill: '#eee'
+});
+
 var Circle = drawComponent.surface.add({
     type: 'circle',
-    x: 80,
+    x: 81,
     y: 200,
     radius: 20,
     fill: '#eee'
@@ -22,42 +250,86 @@ var Circle = drawComponent.surface.add({
 
 var Circle1 = drawComponent.surface.add({
     type: 'circle',
-    x: 120,
+    x: 118,
     y: 200,
     radius: 20,
     fill: '#eee'
 });
 var Circle2 = drawComponent.surface.add({
     type: 'circle',
-    x: 160,
+    x: 156,
     y: 200,
     radius: 20,
     fill: '#eee'
 });
 var Circle3 = drawComponent.surface.add({
     type: 'circle',
-    x: 200,
+    x: 193,
     y: 200,
     radius: 20,
     fill: '#eee'
 });
 var Circle4 = drawComponent.surface.add({
     type: 'circle',
-    x: 240,
+    x: 233,
     y: 200,
     radius: 20,
     fill: '#eee'
 });
 var Circle5 = drawComponent.surface.add({
     type: 'circle',
-    x: 280,
+    x: 272,
     y: 200,
     radius: 20,
     fill: '#eee'
 });
+
 var Circle6 = drawComponent.surface.add({
+    type: 'circle',
+    x:110,
+    y: 198,
+    radius: 1,
+    fill: '#eee'
+});
+var Circle7 = drawComponent.surface.add({
+    type: 'circle',
+    x:117,
+    y: 198,
+    radius: 1,
+    fill: '#eee'
+});
+var Circle8 = drawComponent.surface.add({
+    type: 'circle',
+    x:114,
+    y: 205,
+    radius: 1,
+    fill: '#eee'
+});
+var Circle9 = drawComponent.surface.add({
+    type: 'circle',
+    x:155,
+    y: 198,
+    radius: 1,
+    fill: '#eee'
+});
+var Circle10 = drawComponent.surface.add({
+    type: 'circle',
+    x:162,
+    y: 198,
+    radius: 1,
+    fill: '#eee'
+});
+var Circle11 = drawComponent.surface.add({
+    type: 'circle',
+    x:159,
+    y: 205,
+    radius: 1,
+    fill: '#eee'
+});
+
+var nose = drawComponent.surface.add({
 type : "path",
-            path : "M 438.39286,164.92857 400.35714,151 l -51.25,35.89286 40.17858,14.46428 49.10714,-36.42857 z",
+            path : "M 117 178 L 157 178 L 137 218",
             fill : '#FF02D9',
             'fill-opacity' : "1",
             'opacity' : "0.6585366",
@@ -65,9 +337,9 @@ type : "path",
             group : 'convc',
             stroke : 'none'
 });
-var Circle6 = drawComponent.surface.add({
+var nail = drawComponent.surface.add({
 type : "path",
-            path : "M 438,114 400,101 l -51,-15 40,-36 49,-36 z",
+            path : "M 72 190 L 78 190 L 75 240",
             fill : '#FF02D9',
             'fill-opacity' : "1",
             'opacity' : "0.6585366",
@@ -75,9 +347,19 @@ type : "path",
             group : 'convc',
             stroke : 'none'
 });
-var Circle6 = drawComponent.surface.add({
+var nail2 = drawComponent.surface.add({
 type : "path",
-            path : "M 100 50 L 125 150 L 100 150 200 Z",
+            path : "M 84 190 L 90 190 L 87 240",
+            fill : '#FF02D9',
+            'fill-opacity' : "1",
+            'opacity' : "0.6585366",
+            'fill-rule' : 'nonzero',
+            group : 'convc',
+            stroke : 'none'
+});
+var nail1 = drawComponent.surface.add({
+type : "path",
+            path : "M 78 190 L 84 198 L 81 240",
             fill : '#FF02D9',
             'fill-opacity' : "1",
             'opacity' : "0.6585366",
@@ -86,41 +368,1109 @@ type : "path",
             stroke : 'none'
 });
 
+var nail4 = drawComponent.surface.add({
+type : "path",
+            path : "M 186 190 L 192 190 L 189 240",
+            fill : '#FF02D9',
+            'fill-opacity' : "1",
+            'opacity' : "0.6585366",
+            'fill-rule' : 'nonzero',
+            group : 'convc',
+            stroke : 'none'
+});
+var nail5 = drawComponent.surface.add({
+type : "path",
+            path : "M 198 190 L 204 190 L 201 240",
+            fill : '#FF02D9',
+            'fill-opacity' : "1",
+            'opacity' : "0.6585366",
+            'fill-rule' : 'nonzero',
+            group : 'convc',
+            stroke : 'none'
+});
+var nail6 = drawComponent.surface.add({
+type : "path",
+            path : "M 192 190 L 198 198 L 195 240",
+            fill : '#FF02D9',
+            'fill-opacity' : "1",
+            'opacity' : "0.6585366",
+            'fill-rule' : 'nonzero',
+            group : 'convc',
+            stroke : 'none'
+});
+var nail7 = drawComponent.surface.add({
+type : "path",
+            path : "M 221 190 L 227 190 L 224 240",
+            fill : '#FF02D9',
+            'fill-opacity' : "1",
+            'opacity' : "0.6585366",
+            'fill-rule' : 'nonzero',
+            group : 'convc',
+            stroke : 'none'
+});
+var nail8 = drawComponent.surface.add({
+type : "path",
+            path : "M 233 190 L 239 190 L 236 240",
+            fill : '#FF02D9',
+            'fill-opacity' : "1",
+            'opacity' : "0.6585366",
+            'fill-rule' : 'nonzero',
+            group : 'convc',
+            stroke : 'none'
+});
+var nail9 = drawComponent.surface.add({
+type : "path",
+            path : "M 227 190 L 233 198 L 230 240",
+            fill : '#FF02D9',
+            'fill-opacity' : "1",
+            'opacity' : "0.6585366",
+            'fill-rule' : 'nonzero',
+            group : 'convc',
+            stroke : 'none'
+});
+var nail10 = drawComponent.surface.add({
+type : "path",
+            path : "M 261 190 L 267 190 L 264 240",
+            fill : '#FF02D9',
+            'fill-opacity' : "1",
+            'opacity' : "0.6585366",
+            'fill-rule' : 'nonzero',
+            group : 'convc',
+            stroke : 'none'
+});
+var nail11 = drawComponent.surface.add({
+type : "path",
+            path : "M 273 190 L 279 190 L 276 240",
+            fill : '#FF02D9',
+            'fill-opacity' : "1",
+            'opacity' : "0.6585366",
+            'fill-rule' : 'nonzero',
+            group : 'convc',
+            stroke : 'none'
+});
+var nail12 = drawComponent.surface.add({
+type : "path",
+            path : "M 267 190 L 273 198 L 270 240",
+            fill : '#FF02D9',
+            'fill-opacity' : "1",
+            'opacity' : "0.6585366",
+            'fill-rule' : 'nonzero',
+            group : 'convc',
+            stroke : 'none'
+});
+var bone55 = drawComponent.surface.add({
+type: 'rect',
+    x: 50,
+    y: 257,
+    width: 50,
+    height: 12
+});
+
+var bone5 = drawComponent.surface.add({
+type: 'rect',
+    x: 50,
+    y: 259,
+    width: 50,
+    height: 8
+});
+
+var bone11 = drawComponent.surface.add({
+    type: 'circle',
+    x:50,
+    y: 255,
+    radius: 12,
+});
+
+var bone1 = drawComponent.surface.add({
+    type: 'circle',
+    x:50,
+    y: 255,
+    radius: 10,
+});
+
+var bone22 = drawComponent.surface.add({
+    type: 'circle',
+    x:50,
+    y: 270,
+    radius: 12,
+});
+
+var bone2= drawComponent.surface.add({
+    type: 'circle',
+    x:50,
+    y: 270,
+    radius: 10,
+    fill: '#eee'
+});
+
+
+var bones3 = drawComponent.surface.add({
+    type: 'circle',
+    x:100,
+    y: 255,
+    radius: 12,
+});
+
+var bone3 = drawComponent.surface.add({
+    type: 'circle',
+    x:100,
+    y: 255,
+    radius: 10,
+});
+
+
+var bone44 = drawComponent.surface.add({
+    type: 'circle',
+    x:100,
+    y: 270,
+    radius: 12,
+    fill: '#eee'
+});
+
+var bone4= drawComponent.surface.add({
+    type: 'circle',
+    x:100,
+    y: 270,
+    radius: 10,
+    fill: '#eee'
+});
+
+var hide1 = drawComponent.surface.add({
+type: 'rect',
+    x: 92,
+    y: 258,
+    width: 16,
+    height: 15
+});
+var hide2 = drawComponent.surface.add({
+type: 'rect',
+    x: 42,
+    y: 258,
+    width: 16,
+    height: 15
+});
+
+var hide3 = drawComponent.surface.add({
+type: 'rect',
+    x: 50,
+    y: 259,
+    width: 55,
+    height: 8
+});
+var trunk = drawComponent.surface.add({
+type: 'rect',
+    x: 500,
+    y: 100,
+    width: 200,
+    height: 400
+});
+var t61 = drawComponent.surface.add({
+    type: 'circle',
+    x: 480,
+    y: 0,
+    radius: 40,
+    fill: '#eee'
+});
+var t62 = drawComponent.surface.add({
+    type: 'circle',
+    x: 550,
+    y: 80,
+    radius: 80,
+    fill: '#eee'
+});
+var t1 = drawComponent.surface.add({
+    type: 'circle',
+    x: 500,
+    y: 100,
+    radius: 20,
+    fill: '#eee'
+});
+var t2 = drawComponent.surface.add({
+    type: 'circle',
+    x: 500,
+    y: 20,
+    radius: 20,
+    fill: '#eee'
+});
+var t3 = drawComponent.surface.add({
+    type: 'circle',
+    x: 520,
+    y: 90,
+    radius: 20,
+    fill: '#eee'
+});
+var t4 = drawComponent.surface.add({
+    type: 'circle',
+    x: 450,
+    y: 75,
+    radius: 20,
+    fill: '#eee'
+});
+var t5 = drawComponent.surface.add({
+    type: 'circle',
+    x: 420,
+    y: 60,
+    radius: 20,
+    fill: '#eee'
+});
+var t6 = drawComponent.surface.add({
+    type: 'circle',
+    x: 550,
+    y: 45,
+    radius: 20,
+    fill: '#eee'
+});
+var t7 = drawComponent.surface.add({
+    type: 'circle',
+    x: 460,
+    y: 124,
+    radius: 20,
+    fill: '#eee'
+});
+var t8 = drawComponent.surface.add({
+    type: 'circle',
+    x: 532,
+    y: 32,
+    radius: 20,
+    fill: '#eee'
+});
+var t9 = drawComponent.surface.add({
+    type: 'circle',
+    x: 550,
+    y: 60,
+    radius: 20,
+    fill: '#eee'
+});
+var t10 = drawComponent.surface.add({
+    type: 'circle',
+    x: 540,
+    y: 45,
+    radius: 20,
+    fill: '#eee'
+});
+var t11 = drawComponent.surface.add({
+    type: 'circle',
+    x: 540,
+    y: 120,
+    radius: 20,
+    fill: '#eee'
+});
+var t12 = drawComponent.surface.add({
+    type: 'circle',
+    x: 450,
+    y: 135,
+    radius: 20,
+    fill: '#eee'
+});
+var t13 = drawComponent.surface.add({
+    type: 'circle',
+    x: 600,
+    y: 90,
+    radius: 20,
+    fill: '#eee'
+});
+var t14 = drawComponent.surface.add({
+    type: 'circle',
+    x: 590,
+    y: 75,
+    radius: 20,
+    fill: '#eee'
+});
+var t15 = drawComponent.surface.add({
+    type: 'circle',
+    x: 575,
+    y: 135,
+    radius: 20,
+    fill: '#eee'
+});
+var t16 = drawComponent.surface.add({
+    type: 'circle',
+    x: 510,
+    y: 110,
+    radius: 20,
+    fill: '#eee'
+});
+var t17 = drawComponent.surface.add({
+    type: 'circle',
+    x: 450,
+    y: 38,
+    radius: 20,
+    fill: '#eee'
+});
+var t18 = drawComponent.surface.add({
+    type: 'circle',
+    x: 532,
+    y: 132,
+    radius: 20,
+    fill: '#eee'
+});
+var t19 = drawComponent.surface.add({
+    type: 'circle',
+    x: 512,
+    y: 78,
+    radius: 20,
+    fill: '#eee'
+});
+var t20 = drawComponent.surface.add({
+    type: 'circle',
+    x: 579,
+    y: 89,
+    radius: 20,
+    fill: '#eee'
+});
+var t21 = drawComponent.surface.add({
+    type: 'circle',
+    x: 479,
+    y: 35,
+    radius: 20,
+    fill: '#eee'
+});
+var t22 = drawComponent.surface.add({
+    type: 'circle',
+    x: 460,
+    y: 49,
+    radius: 20,
+    fill: '#eee'
+});
+var t23 = drawComponent.surface.add({
+    type: 'circle',
+    x: 520,
+    y: 20,
+    radius: 20,
+    fill: '#eee'
+});
+var t24 = drawComponent.surface.add({
+    type: 'circle',
+    x: 450,
+    y: 20,
+    radius: 20,
+    fill: '#eee'
+});
+var t25 = drawComponent.surface.add({
+    type: 'circle',
+    x: 420,
+    y: 15,
+    radius: 20,
+    fill: '#eee'
+});
+var t26 = drawComponent.surface.add({
+    type: 'circle',
+    x: 550,
+    y: 145,
+    radius: 20,
+    fill: '#eee'
+});
+var t27 = drawComponent.surface.add({
+    type: 'circle',
+    x: 580,
+    y: 124,
+    radius: 20,
+    fill: '#eee'
+});
+var t28 = drawComponent.surface.add({
+    type: 'circle',
+    x: 532,
+    y: 132,
+    radius: 20,
+    fill: '#eee'
+});
+var t29 = drawComponent.surface.add({
+    type: 'circle',
+    x: 550,
+    y: 160,
+    radius: 20,
+    fill: '#eee'
+});
+var t30 = drawComponent.surface.add({
+    type: 'circle',
+    x: 540,
+    y: 145,
+    radius: 20,
+    fill: '#eee'
+});
+var t31 = drawComponent.surface.add({
+    type: 'circle',
+    x: 520,
+    y: 90,
+    radius: 20,
+    fill: '#eee'
+});
+var t32 = drawComponent.surface.add({
+    type: 'circle',
+    x: 500,
+    y: 135,
+    radius: 20,
+    fill: '#eee'
+});
+var t33 = drawComponent.surface.add({
+    type: 'circle',
+    x: 500,
+    y: 90,
+    radius: 20,
+    fill: '#eee'
+});
+var t34 = drawComponent.surface.add({
+    type: 'circle',
+    x: 510,
+    y: 75,
+    radius: 20,
+    fill: '#eee'
+});
+var t35 = drawComponent.surface.add({
+    type: 'circle',
+    x: 575,
+    y: 50,
+    radius: 20,
+    fill: '#eee'
+});
+var t36 = drawComponent.surface.add({
+    type: 'circle',
+    x: 450,
+    y: 80,
+    radius: 20,
+    fill: '#eee'
+});
+var t37 = drawComponent.surface.add({
+    type: 'circle',
+    x: 490,
+    y: 138,
+    radius: 20,
+    fill: '#eee'
+});
+var t38 = drawComponent.surface.add({
+    type: 'circle',
+    x: 532,
+    y: 32,
+    radius: 20,
+    fill: '#eee'
+});
+var t39 = drawComponent.surface.add({
+    type: 'circle',
+    x: 512,
+    y: 160,
+    radius: 20,
+    fill: '#eee'
+});
+var t40 = drawComponent.surface.add({
+    type: 'circle',
+    x: 500,
+    y: 89,
+    radius: 20,
+    fill: '#eee'
+});
+var t41 = drawComponent.surface.add({
+    type: 'circle',
+    x: 450,
+    y: 100,
+    radius: 20,
+    fill: '#eee'
+});
+var t42 = drawComponent.surface.add({
+    type: 'circle',
+    x: 480,
+    y: 100,
+    radius: 20,
+    fill: '#eee'
+});
+var t43 = drawComponent.surface.add({
+    type: 'circle',
+    x: 550,
+    y: 90,
+    radius: 20,
+    fill: '#eee'
+});
+var t44 = drawComponent.surface.add({
+    type: 'circle',
+    x: 580,
+    y: 105,
+    radius: 20,
+    fill: '#eee'
+});
+var t45 = drawComponent.surface.add({
+    type: 'circle',
+    x: 550,
+    y: 10,
+    radius: 20,
+    fill: '#eee'
+});
+var t46 = drawComponent.surface.add({
+    type: 'circle',
+    x: 580,
+    y: 15,
+    radius: 20,
+    fill: '#eee'
+});
+var t47 = drawComponent.surface.add({
+    type: 'circle',
+    x: 570,
+    y: 24,
+    radius: 20,
+    fill: '#eee'
+});
+var t48 = drawComponent.surface.add({
+    type: 'circle',
+    x: 532,
+    y: 102,
+    radius: 20,
+    fill: '#eee'
+});
+var t49 = drawComponent.surface.add({
+    type: 'circle',
+    x: 470,
+    y: 30,
+    radius: 20,
+    fill: '#eee'
+});
+var t50 = drawComponent.surface.add({
+    type: 'circle',
+    x: 460,
+    y: 45,
+    radius: 20,
+    fill: '#eee'
+});
+var t51 = drawComponent.surface.add({
+    type: 'circle',
+    x: 500,
+    y: 100,
+    radius: 20,
+    fill: '#eee'
+});
+var t52 = drawComponent.surface.add({
+    type: 'circle',
+    x: 440,
+    y: 20,
+    radius: 20,
+    fill: '#eee'
+});
+var t53 = drawComponent.surface.add({
+    type: 'circle',
+    x: 490,
+    y: 80,
+    radius: 20,
+    fill: '#eee'
+});
+var t54 = drawComponent.surface.add({
+    type: 'circle',
+    x: 560,
+    y: 20,
+    radius: 20,
+    fill: '#eee'
+});
+var t55 = drawComponent.surface.add({
+    type: 'circle',
+    x: 525,
+    y: 140,
+    radius: 20,
+    fill: '#eee'
+});
+var t56 = drawComponent.surface.add({
+    type: 'circle',
+    x: 540,
+    y: 125,
+    radius: 20,
+    fill: '#eee'
+});
+var t57 = drawComponent.surface.add({
+    type: 'circle',
+    x: 500,
+    y: 35,
+    radius: 20,
+    fill: '#eee'
+});
+var t58 = drawComponent.surface.add({
+    type: 'circle',
+    x: 505,
+    y: 50,
+    radius: 20,
+    fill: '#eee'
+});
+var t59 = drawComponent.surface.add({
+    type: 'circle',
+    x: 510,
+    y: 31,
+    radius: 20,
+    fill: '#eee'
+});
+var t60 = drawComponent.surface.add({
+    type: 'circle',
+    x: 540,
+    y: 145,
+    radius: 20,
+    fill: '#eee'
+});
+
 // Now do stuff with the sprite, like changing its properties:
+t1.setAttributes({
+    fill: '#12660F'
+}, true);
+t2.setAttributes({
+    fill: '#178213'
+}, true);
+t3.setAttributes({
+    fill: '#2BF223'
+}, true);
+t4.setAttributes({
+    fill: '#2EBF50'
+}, true);
+t5.setAttributes({
+    fill: '#1D7A33'
+}, true);
+t6.setAttributes({
+    fill: '#269E42'
+}, true);
+t7.setAttributes({
+    fill: '#36D916'
+}, true);
+t8.setAttributes({
+    fill: '#248F0E'
+}, true);
+t9.setAttributes({
+    fill: '#2DB311'
+}, true);
+t10.setAttributes({
+    fill: '#3AE816'
+}, true);
+t11.setAttributes({
+    fill: '#12660F'
+}, true);
+t12.setAttributes({
+    fill: '#178213'
+}, true);
+t13.setAttributes({
+    fill: '#2BF223'
+}, true);
+t14.setAttributes({
+    fill: '#2EBF50'
+}, true);
+t15.setAttributes({
+    fill: '#1D7A33'
+}, true);
+t16.setAttributes({
+    fill: '#269E42'
+}, true);
+t17.setAttributes({
+    fill: '#36D916'
+}, true);
+t18.setAttributes({
+    fill: '#248F0E'
+}, true);
+t19.setAttributes({
+    fill: '#2DB311'
+}, true);
+t20.setAttributes({
+    fill: '#3AE816'
+}, true);
+t21.setAttributes({
+    fill: '#12660F'
+}, true);
+t22.setAttributes({
+    fill: '#178213'
+}, true);
+t23.setAttributes({
+    fill: '#2BF223'
+}, true);
+t24.setAttributes({
+    fill: '#2EBF50'
+}, true);
+t25.setAttributes({
+    fill: '#1D7A33'
+}, true);
+t26.setAttributes({
+    fill: '#269E42'
+}, true);
+t27.setAttributes({
+    fill: '#36D916'
+}, true);
+t28.setAttributes({
+    fill: '#248F0E'
+}, true);
+t29.setAttributes({
+    fill: '#2DB311'
+}, true);
+t30.setAttributes({
+    fill: '#3AE816'
+}, true);
+t31.setAttributes({
+    fill: '#12660F'
+}, true);
+t32.setAttributes({
+    fill: '#178213'
+}, true);
+t33.setAttributes({
+    fill: '#2BF223'
+}, true);
+t34.setAttributes({
+    fill: '#2EBF50'
+}, true);
+t35.setAttributes({
+    fill: '#1D7A33'
+}, true);
+t36.setAttributes({
+    fill: '#269E42'
+}, true);
+t37.setAttributes({
+    fill: '#36D916'
+}, true);
+t38.setAttributes({
+    fill: '#248F0E'
+}, true);
+t39.setAttributes({
+    fill: '#2DB311'
+}, true);
+t40.setAttributes({
+    fill: '#3AE816'
+}, true);
+t41.setAttributes({
+    fill: '#12660F'
+}, true);
+t42.setAttributes({
+    fill: '#178213'
+}, true);
+t43.setAttributes({
+    fill: '#2BF223'
+}, true);
+t44.setAttributes({
+    fill: '#2EBF50'
+}, true);
+t45.setAttributes({
+    fill: '#1D7A33'
+}, true);
+t46.setAttributes({
+    fill: '#269E42'
+}, true);
+t47.setAttributes({
+    fill: '#36D916'
+}, true);
+t48.setAttributes({
+    fill: '#248F0E'
+}, true);
+t49.setAttributes({
+    fill: '#2DB311'
+}, true);
+t50.setAttributes({
+    fill: '#3AE816'
+}, true);
+t51.setAttributes({
+    fill: '#12660F'
+}, true);
+t52.setAttributes({
+    fill: '#178213'
+}, true);
+t53.setAttributes({
+    fill: '#2BF223'
+}, true);
+t54.setAttributes({
+    fill: '#2EBF50'
+}, true);
+t55.setAttributes({
+    fill: '#1D7A33'
+}, true);
+t56.setAttributes({
+    fill: '#269E42'
+}, true);
+t57.setAttributes({
+    fill: '#36D916'
+}, true);
+t58.setAttributes({
+    fill: '#248F0E'
+}, true);
+t59.setAttributes({
+    fill: '#2DB311'
+}, true);
+t60.setAttributes({
+    fill: '#3AE816'
+}, true);
+t61.setAttributes({
+    fill: '#2DB311'
+}, true);
+t62.setAttributes({
+    fill: '#3AE816'
+}, true);
+trunk.setAttributes({
+    fill: '#66491F'
+}, true);
+back.setAttributes({
+    fill: '#0FEDFC'
+}, true);
+back1.setAttributes({
+    fill: '#478545'
+}, true);
+sun.setAttributes({
+    fill: '#F8FF21'
+}, true);
+sun1.setAttributes({
+    fill: '#D13524'
+}, true);
+sun2.setAttributes({
+    fill: '#FFB300'
+}, true);
+sun3.setAttributes({
+    fill: '#F8FF21'
+}, true);
+body1.setAttributes({
+    fill: '#7A662D'
+}, true);
+body.setAttributes({
+    fill: '#C4A348'
+}, true);
+ton.setAttributes({
+    fill: '#FF1C3A'
+}, true);
+eyel.setAttributes({
+    fill: '#fff'
+}, true);
+eyell.setAttributes({
+    fill: '#69FFD7'
+}, true);
+
+eyellll.setAttributes({
+    fill: '#lll'
+}, true);
+eyer.setAttributes({
+    fill: '#fff'
+}, true);
+eyerr.setAttributes({
+    fill: '#69FFD7'
+}, true);
+eyerrrr.setAttributes({
+    fill: '#lll'
+}, true);
+head.setAttributes({
+    fill: '#C4A348'
+}, true);
+head1.setAttributes({
+    fill: '#C4A348'
+}, true);
 Circle.setAttributes({
-    fill: '#ccc'
+    fill: '#C4A348'
 }, true);
 Circle1.setAttributes({
-    fill: '#ccc'
+    fill: '#C4A348'
 }, true);
 Circle2.setAttributes({
-    fill: '#ccc'
+    fill: '#C4A348'
 }, true);
 Circle3.setAttributes({
-    fill: '#ccc'
+    fill: '#C4A348'
 }, true);
 Circle4.setAttributes({
-    fill: '#ccc'
+    fill: '#C4A348'
 }, true);
 Circle5.setAttributes({
-    fill: '#ccc'
+    fill: '#C4A348'
+}, true);
+
+Cir3.setAttributes({
+    fill: '#7A662D'
+}, true);
+Cir4.setAttributes({
+    fill: '#7A662D'
+}, true);
+Cir5.setAttributes({
+    fill: '#7A662D'
+}, true);
+Cir.setAttributes({
+    fill: '#7A662D'
 }, true);
 Circle6.setAttributes({
+    fill: '#lll'
+}, true);
+Circle7.setAttributes({
+    fill: '#lll'
+}, true);
+Circle8.setAttributes({
+    fill: '#lll'
+}, true);
+earl.setAttributes({
+    fill: '#7A662D'
+}, true);
+Circle9.setAttributes({
+    fill: '#lll'
+}, true);
+Circle10.setAttributes({
+    fill: '#lll'
+}, true);
+Circle11.setAttributes({
+    fill: '#lll'
+}, true);
+earl.setAttributes({
+    fill: '#7A662D'
+}, true);
+hide1.setAttributes({
+    fill: '#FFEE99'
+}, true);
+hide2.setAttributes({
+    fill: '#FFEE99'
+}, true);
+hide3.setAttributes({
+    fill: '#FFEE99'
+}, true);
+bone1.setAttributes({
+    fill: '#FFEE99'
+}, true);
+bone2.setAttributes({
+    fill: '#FFEE99'
+}, true);
+bone3.setAttributes({
+    fill: '#FFEE99'
+}, true);
+bone4.setAttributes({
+    fill: '#FFEE99'
+}, true);
+bone5.setAttributes({
+    fill: '#FFEE99'
+}, true);
+bone11.setAttributes({
+    fill: '#5E4200'
+}, true);
+bone22.setAttributes({
+    fill: '#5E4200'
+}, true);
+bones3.setAttributes({
+    fill: '#5E4200'
+}, true);
+bone44.setAttributes({
+    fill: '#5E4200'
+}, true);
+bone55.setAttributes({
+    fill: '#5E4200'
+}, true);
+
+spoke1.setAttributes({
     scale: {
         x:0.3,
         y:0.3
     },
-    fill: '#ccc'
+    fill: '#F8FF21'
+}, true);
+spoke2.setAttributes({
+    scale: {
+        x:0.3,
+        y:0.3
+    },
+    fill: '#F8FF21'
+}, true);
+spoke3.setAttributes({
+    scale: {
+        x:0.3,
+        y:0.3
+    },
+    fill: '#F8FF21'
+}, true);
+spoke4.setAttributes({
+    scale: {
+        x:0.3,
+        y:0.3
+    },
+    fill: '#F8FF21'
 }, true);
 
 
-// or animate an attribute on the sprite
-Circle.animate({
-    to: {
-        fill: '#eee'
+nose.setAttributes({
+    scale: {
+        x:0.3,
+        y:0.3
     },
-    duration: 2000
-});
+    fill: '#9C223F'
+}, true);
+
+nail.setAttributes({
+    scale: {
+        x:0.3,
+        y:0.3
+    },
+    fill: '#lll'
+}, true);
+nail1.setAttributes({
+    scale: {
+        x:0.3,
+        y:0.3
+    },
+    fill: '#lll'
+}, true);
+nail2.setAttributes({
+    scale: {
+        x:0.3,
+        y:0.3
+    },
+    fill: '#lll'
+}, true);
+nail4.setAttributes({
+    scale: {
+        x:0.3,
+        y:0.3
+    },
+    fill: '#lll'
+}, true);
+nail5.setAttributes({
+    scale: {
+        x:0.3,
+        y:0.3
+    },
+    fill: '#lll'
+}, true);
+nail6.setAttributes({
+    scale: {
+        x:0.3,
+        y:0.3
+    },
+    fill: '#lll'
+}, true);
+earr.setAttributes({
+    fill: '#lll'
+}, true);
+nail7.setAttributes({
+    scale: {
+        x:0.3,
+        y:0.3
+    },
+    fill: '#lll'
+}, true);
+nail8.setAttributes({
+    scale: {
+        x:0.3,
+        y:0.3
+    },
+    fill: '#lll'
+}, true);
+nail9.setAttributes({
+    scale: {
+        x:0.3,
+        y:0.3
+    },
+    fill: '#lll'
+}, true);
+nail10.setAttributes({
+    scale: {
+        x:0.3,
+        y:0.3
+    },
+    fill: '#lll'
+}, true);
+nail11.setAttributes({
+    scale: {
+        x:0.3,
+        y:0.3
+    },
+    fill: '#lll'
+}, true);
+nail12.setAttributes({
+    scale: {
+        x:0.3,
+        y:0.3
+    },
+    fill: '#lll'
+}, true);
+earr.setAttributes({
+    fill: '#7A662D'
+}, true);
+tail.setAttributes({
+    scale: {
+        x:0.3,
+        y:0.3
+    },
+    fill: '#C4A348'
+}, true);
 
 // Add a mouseup listener to the sprite
 Circle.addListener('mouseup', function() {
